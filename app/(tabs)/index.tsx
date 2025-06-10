@@ -10,9 +10,20 @@ export default function HomeScreen() {
         <Image style={styles.Image} source={require('../../assets/images/logo[1].png')}/>
         <Text style={styles.title}>Get Started</Text>
         <Text style ={styles.subtitle}>"Find your perfect home in minutes with seamless process at Homery"</Text>
-        <TouchableOpacity style={styles.log}>
-          <Text style = {styles.placeholder}>Continue with Google</Text>
-        </TouchableOpacity>
+        <View style ={styles.group}>
+          <TouchableOpacity style={styles.log}>
+            <View style = {styles.contain}>
+              <Image style ={styles.logo} source={require('../../assets/images/logos_google-icon--.png')}/>
+              <Text style = {styles.placeholder}>Continue with Google</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.log}>
+            <View style = {styles.contain}>
+              <Image style ={styles.logo2} source={require('../../assets/images/logo_round-apple.png')}/>
+              <Text style = {styles.placeholder}>Continue with Apple</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
       </View>
       
     </SafeAreaView>
@@ -46,9 +57,27 @@ const styles = StyleSheet.create({
   log: {
     borderWidth: 1,
     height: 60,
-    borderRadius: 8
+    borderRadius: 8,
+    justifyContent: 'center',
+    marginVertical: 10
   },
   placeholder: {
-    textAlign: 'center'
+    fontWeight: '500'
+  },
+  logo: {
+    width: 18,
+    height: 18,
+  },
+  contain: {
+    flexDirection: 'row',
+    alignSelf: 'center',
+    gap: 10
+  },
+  logo2:{
+    width: 24,
+    height: 24,
+  },
+  group: {
+    marginVertical: 20
   }
 });
