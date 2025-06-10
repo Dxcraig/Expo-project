@@ -6,6 +6,22 @@ import Button from '../../components/Button'
 
 
 export default function HomeScreen() {
+  const getCurrencyExchange = async() => {
+    try{
+      const response = await fetch('https://api.apilayer.com/currency_data/live?source=USD&currencies=EUR,GBP', {
+        method: 'GET',
+        headers: {
+          'apikey': '9yKVi2qfH6zsaeN7DeGG45ZZdNiRh42F'
+        }
+      })
+      const data = await response.json()
+      console.log('my data', data)
+    }
+
+    catch(e){
+      console.log('error', e)
+    }
+  }
   const [checked, setChecked] = useState(false);
   const [fullName, setFullName] = useState('')
   const [phoneNumber, setPhoneNumber] = useState('')
@@ -13,7 +29,7 @@ export default function HomeScreen() {
   const [confirmPassword, setConfirmPassword] = useState('')
   
   useEffect(() => {
-    console.log('Micheal')
+    getCurrencyExchange()
   }, [])
   return (
     <SafeAreaView style = {styles.container}>
