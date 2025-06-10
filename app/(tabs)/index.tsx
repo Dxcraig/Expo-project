@@ -3,6 +3,7 @@ import { Image, ScrollView, StyleSheet, Text, TextInput, TouchableHighlight, Tou
 import { SafeAreaView } from 'react-native-safe-area-context';
 import React, {useEffect, useState}from 'react';
 import Button from '../../components/Button'
+import axios from 'axios'
 
 
 export default function HomeScreen() {
