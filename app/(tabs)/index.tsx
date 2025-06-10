@@ -1,12 +1,12 @@
 
-import { Button, Image, StyleSheet, Text, TouchableHighlight, TouchableOpacity, View } from 'react-native';
+import { Button, Image, ScrollView, StyleSheet, Text, TextInput, TouchableHighlight, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 export default function HomeScreen() {
   return (
     <SafeAreaView style = {styles.container}>
-      <View>
+      <ScrollView>
         <Image style={styles.Image} source={require('../../assets/images/logo[1].png')}/>
         <Text style={styles.title}>Get Started</Text>
         <Text style ={styles.subtitle}>"Find your perfect home in minutes with seamless process at Homery"</Text>
@@ -29,8 +29,25 @@ export default function HomeScreen() {
           <Text style = {styles.align}>OR</Text>
           <View style= {styles.drop}/>
         </View>
-      </View>
-      
+        <View style ={styles.view}>
+          <View>
+            <Text style = {styles.text}>Full name</Text>
+            <TextInput style = {styles.input}/>
+          </View>
+          <View>
+            <Text style = {styles.text}>Phone number</Text>
+            <TextInput style = {styles.input}/>
+          </View>
+          <View style = {styles.view}>
+            <Text style = {styles.text}>Password</Text>
+            <TextInput style = {styles.input}/>
+          </View>
+          <View>
+            <Text style = {styles.text}>Confirm Password</Text>
+            <TextInput style = {styles.input}/>
+          </View>
+        </View >
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -98,5 +115,18 @@ const styles = StyleSheet.create({
   }, 
   align: {
     marginHorizontal: 25
+  },
+  text: {
+    color: '#11042F'
+  },
+  input: {
+    height: 59,
+    backgroundColor: '#E8DEFE',
+    borderRadius: 8,
+    paddingLeft: 20
+  },
+  view: {
+    marginBottom: 20,
+    gap: 10
   }
 });
