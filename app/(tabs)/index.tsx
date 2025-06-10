@@ -1,12 +1,17 @@
 
 import { Image, ScrollView, StyleSheet, Text, TextInput, TouchableHighlight, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import React from 'react';
+import React, {useState}from 'react';
 import Button from '../../components/Button'
 
 
 export default function HomeScreen() {
-  const [checked, setChecked] = React.useState(false);
+  const [checked, setChecked] = useState(false);
+  const [fullName, setFullName] = useState('')
+  const [phoneNumber, setPhoneNumber] = useState('')
+  const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
+  console.log(fullName, phoneNumber , password ,confirmPassword)
   return (
     <SafeAreaView style = {styles.container}>
       <ScrollView showsVerticalScrollIndicator = {false}>
@@ -35,19 +40,27 @@ export default function HomeScreen() {
         <View style ={styles.view}>
           <View>
             <Text style = {styles.text}>Full name</Text>
-            <TextInput style = {styles.input}/>
+            <TextInput style = {styles.input} onChangeText={(fullName) => {
+              setFullName(fullName)
+            }}/>
           </View>
           <View>
             <Text style = {styles.text}>Phone number</Text>
-            <TextInput style = {styles.input}/>
+            <TextInput style = {styles.input} onChangeText={(phoneNumber) => {
+              setPhoneNumber(phoneNumber)
+            }}/>
           </View>
           <View style = {styles.view}>
             <Text style = {styles.text}>Password</Text>
-            <TextInput style = {styles.input}/>
+            <TextInput style = {styles.input} onChangeText={(password) => {
+              setPassword(password)
+            }}/>
           </View>
           <View>
             <Text style = {styles.text}>Confirm Password</Text>
-            <TextInput style = {styles.input}/>
+            <TextInput style = {styles.input} onChangeText={(confirmPassword) => {
+              setConfirmPassword(confirmPassword)
+            }}/>
           </View>
         </View >
         <View style = {styles.check}>
@@ -149,7 +162,7 @@ const styles = StyleSheet.create({
   check: {
     flexDirection: 'row',
     marginBottom: 40,
-    gap:10
+    gap:10,
   },
   uncheck: {
     backgroundColor: '#E8DEFE',
