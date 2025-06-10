@@ -9,7 +9,7 @@ export default function HomeScreen() {
   const [checked, setChecked] = React.useState(false);
   return (
     <SafeAreaView style = {styles.container}>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator = {false}>
         <Image style={styles.Image} source={require('../../assets/images/logo[1].png')}/>
         <Text style={styles.title}>Get Started</Text>
         <Text style ={styles.subtitle}>"Find your perfect home in minutes with seamless process at Homery"</Text>
@@ -50,8 +50,12 @@ export default function HomeScreen() {
             <TextInput style = {styles.input}/>
           </View>
         </View >
-        <View>
-          <Checkbox status={checked ? 'checked' : 'unchecked'} onPress={() => {setChecked(!checked);}}/>
+        <View style = {styles.check}>
+          {/* <TouchableOpacity style={styles.uncheck}>
+            <Checkbox uncheckedColor='white' color='white' status={checked ? 'checked' : 'unchecked'} onPress={() => {setChecked(!checked);}}/>
+          </TouchableOpacity> */}
+          
+          <Text style = {styles.terms}>By continuing, you acknowledge that you have read and understood, and agree to Pet Haven <Text style ={styles.bold}>Terms of Services</Text> and <Text style={styles.bold}>Privacy Policy</Text></Text>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -134,5 +138,24 @@ const styles = StyleSheet.create({
   view: {
     marginBottom: 20,
     gap: 10
+  },
+  check: {
+    flexDirection: 'row',
+    marginBottom: 40,
+  },
+  uncheck: {
+    backgroundColor: '#E8DEFE',
+    height: 30,
+    width: 30,
+    justifyContent: 'center',
+    alignSelf: 'center',
+    borderRadius: 8
+  },
+  terms: {
+    textAlign: 'center',
+    marginLeft: 20
+  },
+  bold: {
+    fontWeight: 'bold'
   }
 });
