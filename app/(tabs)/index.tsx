@@ -10,6 +10,9 @@ export default function HomeScreen() {
         <Image style={styles.Image} source={require('../../assets/images/logo[1].png')}/>
         <Text style={styles.title}>Get Started</Text>
         <Text style ={styles.subtitle}>"Find your perfect home in minutes with seamless process at Homery"</Text>
+        <TouchableOpacity style={styles.log}>
+          <Text style = {styles.placeholder}>Continue with Google</Text>
+        </TouchableOpacity>
       </View>
       
     </SafeAreaView>
@@ -39,5 +42,13 @@ const styles = StyleSheet.create({
     marginHorizontal: 40,
     marginTop: 20,
     fontSize: 18
+  },
+  log: {
+    borderWidth: 1,
+    height: 60,
+    borderRadius: 8
+  },
+  placeholder: {
+    textAlign: 'center'
   }
 });
