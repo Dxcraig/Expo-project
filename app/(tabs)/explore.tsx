@@ -7,6 +7,7 @@ import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { IconSymbol } from '@/components/ui/IconSymbol';
+import Button from '@/components/Button';
 
 export default function TabTwoScreen() {
   return (
@@ -92,6 +93,7 @@ export default function TabTwoScreen() {
           ),
         })}
       </Collapsible>
+      <Button text ={'Explore'}/>
     </ParallaxScrollView>
   );
 }

@@ -1,7 +1,6 @@
 
 import { Image, ScrollView, StyleSheet, Text, TextInput, TouchableHighlight, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Checkbox } from 'react-native-paper';
 import React from 'react';
 import Button from '../../components/Button'
 
@@ -52,9 +51,15 @@ export default function HomeScreen() {
           </View>
         </View >
         <View style = {styles.check}>
-          {/* <TouchableOpacity style={styles.uncheck}>
-            <Checkbox uncheckedColor='white' color='white' status={checked ? 'checked' : 'unchecked'} onPress={() => {setChecked(!checked);}}/>
-          </TouchableOpacity> */}
+          <TouchableOpacity style={styles.uncheck} onPress={()=>{
+            setChecked(!checked)
+          }}>
+          
+            {
+              checked && <Image style={{alignSelf:'center'}}source={require('../../assets/images/icons8-done-20.png')}/>
+            }
+            
+          </TouchableOpacity>
           
           <Text style = {styles.terms}>By continuing, you acknowledge that you have read and understood, and agree to Pet Haven <Text style ={styles.bold}>Terms of Services</Text> and <Text style={styles.bold}>Privacy Policy</Text></Text>
         </View>
@@ -144,18 +149,19 @@ const styles = StyleSheet.create({
   check: {
     flexDirection: 'row',
     marginBottom: 40,
+    gap:10
   },
   uncheck: {
     backgroundColor: '#E8DEFE',
-    height: 30,
-    width: 30,
+    height: 25,
+    width: 25,
     justifyContent: 'center',
     alignSelf: 'center',
     borderRadius: 8
   },
   terms: {
     textAlign: 'center',
-    marginLeft: 20
+    
   },
   bold: {
     fontWeight: 'bold'
