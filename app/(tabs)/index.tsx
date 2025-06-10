@@ -1,9 +1,12 @@
 
 import { Button, Image, ScrollView, StyleSheet, Text, TextInput, TouchableHighlight, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { Checkbox } from 'react-native-paper';
+import React from 'react';
 
 
 export default function HomeScreen() {
+  const [checked, setChecked] = React.useState(false);
   return (
     <SafeAreaView style = {styles.container}>
       <ScrollView>
@@ -47,6 +50,9 @@ export default function HomeScreen() {
             <TextInput style = {styles.input}/>
           </View>
         </View >
+        <View>
+          <Checkbox status={checked ? 'checked' : 'unchecked'} onPress={() => {setChecked(!checked);}}/>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
