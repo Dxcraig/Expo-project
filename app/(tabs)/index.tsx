@@ -24,6 +24,11 @@ export default function HomeScreen() {
             </View>
           </TouchableOpacity>
         </View>
+        <View style = {styles.line}>
+          <View style= {styles.drop}/>
+          <Text>OR</Text>
+          <View style= {styles.drop}/>
+        </View>
       </View>
       
     </SafeAreaView>
@@ -80,5 +85,13 @@ const styles = StyleSheet.create({
   },
   group: {
     marginVertical: 20
+  },
+  drop: {
+    height:1,
+    backgroundColor: '#E1DBF0'
+  },
+  line:{
+    flexDirection: 'row',
+    alignSelf: 'center'
   }
 });
