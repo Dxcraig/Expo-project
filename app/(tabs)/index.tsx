@@ -71,7 +71,8 @@ const styles = StyleSheet.create({
   contain: {
     flexDirection: 'row',
     alignSelf: 'center',
-    gap: 10
+    gap: 10,
+    alignItems: 'center'
   },
   logo2:{
     width: 24,
