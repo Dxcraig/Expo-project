@@ -8,7 +8,8 @@ export default function HomeScreen() {
     <SafeAreaView style = {styles.container}>
       <View>
         <Image style={styles.Image} source={require('../../assets/images/logo[1].png')}/>
-        <Text>Get Started</Text>
+        <Text style={styles.title}>Get Started</Text>
+        <Text style ={styles.subtitle}>"Find your perfect home in minutes with seamless process at Homery"</Text>
       </View>
       
     </SafeAreaView>
@@ -25,6 +26,18 @@ const styles = StyleSheet.create({
   container: {
     marginHorizontal: 20,
     flex: 1,
-    
+
+  },
+  title: {
+    textAlign: 'center',
+    fontSize: 24,
+    fontWeight: '500'
+  },
+  subtitle: {
+    textAlign: 'center',
+    fontWeight: '300',
+    marginHorizontal: 40,
+    marginTop: 20,
+    fontSize: 18
   }
 });
