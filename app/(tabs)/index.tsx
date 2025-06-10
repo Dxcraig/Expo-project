@@ -1,8 +1,9 @@
 
-import { Button, Image, ScrollView, StyleSheet, Text, TextInput, TouchableHighlight, TouchableOpacity, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, TextInput, TouchableHighlight, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Checkbox } from 'react-native-paper';
 import React from 'react';
+import Button from '../../components/Button'
 
 
 export default function HomeScreen() {
@@ -57,6 +58,7 @@ export default function HomeScreen() {
           
           <Text style = {styles.terms}>By continuing, you acknowledge that you have read and understood, and agree to Pet Haven <Text style ={styles.bold}>Terms of Services</Text> and <Text style={styles.bold}>Privacy Policy</Text></Text>
         </View>
+        <Button text={'Continue'}/>
       </ScrollView>
     </SafeAreaView>
   );
