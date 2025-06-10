@@ -1,7 +1,7 @@
 
 import { Image, ScrollView, StyleSheet, Text, TextInput, TouchableHighlight, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import React, {useState}from 'react';
+import React, {useEffect, useState}from 'react';
 import Button from '../../components/Button'
 
 
@@ -11,7 +11,10 @@ export default function HomeScreen() {
   const [phoneNumber, setPhoneNumber] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
-  console.log(fullName, phoneNumber , password ,confirmPassword)
+  
+  useEffect(() => {
+    console.log('Micheal')
+  }, [])
   return (
     <SafeAreaView style = {styles.container}>
       <ScrollView showsVerticalScrollIndicator = {false}>
