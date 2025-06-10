@@ -26,7 +26,7 @@ export default function HomeScreen() {
         </View>
         <View style = {styles.line}>
           <View style= {styles.drop}/>
-          <Text>OR</Text>
+          <Text style = {styles.align}>OR</Text>
           <View style= {styles.drop}/>
         </View>
       </View>
@@ -88,10 +88,15 @@ const styles = StyleSheet.create({
   },
   drop: {
     height:1,
-    backgroundColor: '#E1DBF0'
+    backgroundColor: '#E1DBF0',
+    width: '40%'
   },
   line:{
     flexDirection: 'row',
-    alignSelf: 'center'
+    alignSelf: 'center',
+    alignItems: 'center',
+  }, 
+  align: {
+    marginHorizontal: 25
   }
 });
