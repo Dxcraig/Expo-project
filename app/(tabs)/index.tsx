@@ -9,13 +9,13 @@ import axios from 'axios'
 export default function HomeScreen() {
   const getCurrencyExchange = async() => {
     try{
-      const response = await fetch('https://api.apilayer.com/currency_data/live?source=USD&currencies=EUR,GBP', {
+      const response = await axios.get('https://api.apilayer.com/currency_data/live?source=USD&currencies=EUR,GBP', {
         method: 'GET',
         headers: {
           'apikey': '9yKVi2qfH6zsaeN7DeGG45ZZdNiRh42F'
         }
       })
-      const data = await response.json()
+      const data = await axios
       console.log('my data', data)
     }
 
@@ -32,6 +32,10 @@ export default function HomeScreen() {
   useEffect(() => {
     getCurrencyExchange()
   }, [])
+
+
+
+
   return (
     <SafeAreaView style = {styles.container}>
       <ScrollView showsVerticalScrollIndicator = {false}>
